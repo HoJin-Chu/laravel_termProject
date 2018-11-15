@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div id="wrapper" class="animate">
+<div id="wrapper" class="animate" style="padding:3%;">
     <div class="container-fluid">
           <div class="row" style="margin-bottom:40px">
         <div class="col">
@@ -11,7 +11,7 @@
               <h5 class="card-title">펫 지식</h5>
               <h6 class="card-subtitle mb-2 text-muted">다양한 동물들의 모든 지식을 공유 해보자 </h6>
               <p class="card-text">You can also try different version of Bootstrap V4 side menu. Click below link to view all Bootstrap Menu versions.</p>
-              <a href="" class="card-link">link</a>
+              <a href="{{ route('petKnow') }}" class="card-link">link</a>
               <a href="http://websitedesigntamilnadu.com" class="card-link">Another link</a>
             </div>
           </div>
@@ -22,7 +22,7 @@
               <h5 class="card-title">강아지</h5>
               <h6 class="card-subtitle mb-2 text-muted">Bootstrap 4.0.0 Snippet by pradeep330</h6>
               <p class="card-text">You can also try different version of Bootstrap V4 side menu. Click below link to view all Bootstrap Menu versions.</p>
-              <a href="https://bootsnipp.com/pradeep330" class="card-link">link</a>
+              <a href="{{ route('petDog') }}" class="card-link">link</a>
               <a href="http://websitedesigntamilnadu.com" class="card-link">Another link</a>
             </div>
           </div>

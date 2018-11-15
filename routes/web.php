@@ -15,18 +15,10 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('test',function ()
-{
-    return view('tests.temp');
-});
+Route::get('petknow','processController@firstLinkPet')->name('petKnow'); // 펫지식사이트
 
-Route::get('board','processController@index');
+Route::get('petDog','processController@secondLinkPet')->name('petDog'); // 강아지사이트
 
-Route::get('create',function(){
-    return view('tests.create');
-});
-
-Route::resource('complete','processController');
 
 Auth::routes();
 

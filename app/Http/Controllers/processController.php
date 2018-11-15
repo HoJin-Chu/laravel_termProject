@@ -8,34 +8,22 @@ use Illuminate\Support\Facades\Auth;
 
 class processController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    
+    public function firstLinkPet()
     {
-        $test = DB::table('board')->paginate(5);
-
-        return view('tests.board',['items'=>$test]);
+        $test = DB::table('board')->paginate(5); 
+        return view('knowPets.know',['items'=>$test]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function secondLinkPet()
     {
-        //
+        $test = DB::table('board')->paginate(6);
+        return view('DogPets.dog',['items'=>$test]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+    public function create(){}
+
+    
     public function store(Request $request)
     {
         // 네임값을 키값으로 벨류값을 입력한값으로 
@@ -44,53 +32,15 @@ class processController extends Controller
             $request->title,$writer,$request->content,3,3
         ]);
 
-        $test = DB::table('board')->paginate(5);
-
-        return view('tests.board',['items'=>$test]);
+        $pet1Route = DB::table('board')->paginate(5);
+        return view('knowPets.know',['items'=>$pet1Route]);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
+    public function show($id){}
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
+    public function edit($id){}
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
+    public function update(Request $request, $id){}
+   
+    public function destroy($id){}
 }

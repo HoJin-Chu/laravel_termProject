@@ -49,7 +49,6 @@
                                 @endif
                             </li>
                         @else
-                        ssssssssss
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                      {{ Auth::user()->name }}<span class="caret"></span>
@@ -86,9 +85,9 @@
 <div class="copyrights">
     <p class="white-txt">Your Site Name © 2017
         <br><br>
-        <img class="footimg" src="https://openclipart.org/download/59293/logo-water.svg" alt="Logo">
+        <span class="navbar-toggler-icon leftmenutrigger"></span>
+                <a class="navbar-brand" href="{{ url('/') }}"> PET PLACE
     </p>
-    <hr class="dark-line">
     <a class="link" href="#">Contact Us</a>&nbsp
     <a class="link" href="#">Privacy Policy</a>&nbsp
     <a class="link" href="#">Terms & Conditions</a>
