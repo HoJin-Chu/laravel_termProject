@@ -6,19 +6,13 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
-class processController extends Controller
+class KnowController extends Controller
 {
     
-    public function firstLinkPet()
+    public function KnowViewIndex()
     {
-        $test = DB::table('board')->paginate(5); 
-        return view('knowPets.know',['items'=>$test]);
-    }
-
-    public function secondLinkPet()
-    {
-        $test = DB::table('board')->paginate(6);
-        return view('DogPets.dog',['items'=>$test]);
+        $items = DB::table('board')->paginate(5); 
+        return view('knowPets.know',compact('items'));
     }
 
     public function create(){}
