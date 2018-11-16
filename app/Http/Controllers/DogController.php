@@ -13,10 +13,10 @@ class DogController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function DogViewIndex()
+    public function DogBoardIndex()
     {
         //
-        $items = DB::table('board')->paginate(6);
+        $items = DB::table('knowBoard')->paginate(6);
         return view('DogPets.dog',compact('items'));
     }
 

@@ -5,30 +5,37 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use App\knowBoard;
 
 class KnowController extends Controller
 {
     
-    public function KnowViewIndex()
+    public function KnowBoardIndex()
     {
-        $items = DB::table('board')->paginate(5); 
+        $items = knowBoard::
+        orderBy('id','desc')->paginate(5); 
         return view('knowPets.know',compact('items'));
     }
 
-    public function create(){}
-
-    
-    public function store(Request $request)
+    public function KnowCreateIndex()
     {
-        // 네임값을 키값으로 벨류값을 입력한값으로 
-        $writer = Auth::user()['name'];
-        DB::insert('insert into board (title,writer,content,hits,likes) values (?,?,?,?,?)',[
-            $request->title,$writer,$request->content,3,3
-        ]);
-
-        $pet1Route = DB::table('board')->paginate(5);
-        return view('knowPets.know',['items'=>$pet1Route]);
+        return view('knowPets.knowCreate');
     }
+
+    // 글작성
+    public function KnowCreateInsert(Request $request){
+        $writer = Auth::user()['name'];
+        $knowBoard = new knowBoard;
+        $knowBoard->title = $request->title;
+        $knowBoard->writer = $writer;
+        $knowBoard->content = $request->content;
+        $knowBoard->save();
+
+        return redirect()->route('petKnow');
+        // 세션을 넘길때는 response
+    }
+
+    public function create(){}
 
     public function show($id){}
 
