@@ -6,7 +6,7 @@
    <div class="card shopping-cart">
             <div class="card-header bg-dark text-light">
                 <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                CAT PLACE
+                ANIMAL PLACE
                 <div class="clearfix"></div>
             </div>
             <div class="card-body">
@@ -75,8 +75,8 @@
                     <hr>
                     <!-- END PRODUCT -->
                 <div class="pull-right">
-                    <a href="" class="btn btn-outline-secondary pull-right">
-                        Update shopping cart
+                    <a href="" class="btn btn-block btn-outline-secondary pull-right">
+                        작성하기
                     </a>
                 </div>
             </div>

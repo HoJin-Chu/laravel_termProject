@@ -4,6 +4,7 @@
 
 <div id="wrapper" class="animate" style="padding:3%;">
     <div class="container-fluid">
+    <img src="{{asset('img/abstract.jpg')}}" width="100%" height="400px" alt="img"><br><br><br><br>
           <div class="row" style="margin-bottom:40px">
         <div class="col">
           <div class="card">
@@ -19,32 +20,10 @@
         <div class="col">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">강아지</h5>
+              <h5 class="card-title">펫이스북</h5>
               <h6 class="card-subtitle mb-2 text-muted">Bootstrap 4.0.0 Snippet by pradeep330</h6>
               <p class="card-text">You can also try different version of Bootstrap V4 side menu. Click below link to view all Bootstrap Menu versions.</p>
-              <a href="{{ route('petDog') }}" class="card-link">link</a>
-              <a href="http://websitedesigntamilnadu.com" class="card-link">Another link</a>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">고양이</h5>
-              <h6 class="card-subtitle mb-2 text-muted">Bootstrap 4.0.0 Snippet by pradeep330</h6>
-              <p class="card-text">You can also try different version of Bootstrap V4 side menu. Click below link to view all Bootstrap Menu versions.</p>
-              <a href="{{ route('petCat') }}">link</a>
-              <a href="http://websitedesigntamilnadu.com" class="card-link">Another link</a>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">동물병원</h5>
-              <h6 class="card-subtitle mb-2 text-muted">Bootstrap 4.0.0 Snippet by pradeep330</h6>
-              <p class="card-text">You can also try different version of Bootstrap V4 side menu. Click below link to view all Bootstrap Menu versions.</p>
-              <a href="{{ route('petHos') }}" class="card-link">link</a>
+              <a href="{{ route('petPhoto') }}" class="card-link">link</a>
               <a href="http://websitedesigntamilnadu.com" class="card-link">Another link</a>
             </div>
           </div>
@@ -69,6 +48,17 @@
               <h6 class="card-subtitle mb-2 text-muted">Bootstrap 4.0.0 Snippet by pradeep330</h6>
               <p class="card-text">You can also try different version of Bootstrap V4 side menu. Click below link to view all Bootstrap Menu versions.</p>
               <a href="https://bootsnipp.com/pradeep330" class="card-link">link</a>
+              <a href="http://websitedesigntamilnadu.com" class="card-link">Another link</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">동물병원</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Bootstrap 4.0.0 Snippet by pradeep330</h6>
+              <p class="card-text">You can also try different version of Bootstrap V4 side menu. Click below link to view all Bootstrap Menu versions.</p>
+              <a href="{{ route('petHos') }}" class="card-link">link</a>
               <a href="http://websitedesigntamilnadu.com" class="card-link">Another link</a>
             </div>
           </div>

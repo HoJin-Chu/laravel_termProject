@@ -175,6 +175,11 @@ return [
 
     ],
 
+     
+    //  패키지 서비스 공급자 ... 
+    
+    Laravel \ Socialite \ SocialiteServiceProvider :: class,
+
     /*
     |--------------------------------------------------------------------------
     | Class Aliases
@@ -221,7 +226,10 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'Socialite'=> Laravel\Socialite\Facades\Socialite::class,
 
     ],
+
+    
 
 ];
