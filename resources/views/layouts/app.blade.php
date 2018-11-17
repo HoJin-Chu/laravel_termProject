@@ -24,7 +24,7 @@
         <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-laravel">
             <div class="container">
             <span class="navbar-toggler-icon leftmenutrigger"></span>
-                <a class="navbar-brand" href="{{ url('/') }}"> PET PLACE
+                <a class="navbar-brand" href="{{ url('/index') }}"> PET PLACE
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>

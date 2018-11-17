@@ -4,18 +4,18 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\knowBoard;
-use Illuminate\Support\Facades\Auth;
 
-class DogController extends Controller
+class HospitalController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function DogBoardIndex()
+    public function HosBoardIndex()
     {
-        return view('DogPets.dog');
+        $items = knowBoard::paginate(6);
+        return view('HospitalPets.Hospital',compact('items'));
     }
 
     /**

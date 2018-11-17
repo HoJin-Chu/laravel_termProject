@@ -3,19 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\knowBoard;
-use Illuminate\Support\Facades\Auth;
 
-class DogController extends Controller
+class CatController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function DogBoardIndex()
+    public function CatBoardIndex()
     {
-        return view('DogPets.dog');
+        return view('CatPets.cat');
     }
 
     /**

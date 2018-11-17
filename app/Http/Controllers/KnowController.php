@@ -13,7 +13,7 @@ class KnowController extends Controller
     public function KnowBoardIndex()
     {
         $items = knowBoard::
-        orderBy('id','desc')->paginate(5); 
+        orderBy('id','desc')->paginate(10); 
         return view('knowPets.know',compact('items'));
     }
 
@@ -33,6 +33,13 @@ class KnowController extends Controller
 
         return redirect()->route('petKnow');
         // 세션을 넘길때는 response
+    }
+
+    public function KnowViewIndex(Request $request){
+        
+        $id = $request->id;
+        $msg = knowBoard::find($id);
+        return view('knowPets.knowView')->with('msg', $msg);
     }
 
     public function create(){}

@@ -19,7 +19,7 @@
         @foreach($items as $item)
         <tr>
             <td>{{$item->id}}</td>
-            <td>{{$item->title}}</td>
+            <td><a href="/petViewPage?id={{$item["id"]}}">{{$item->title}}</a></td>
             <td>{{$item->writer}}</td>
             <td>{{$item->hits}}</td>
             <td>{{$item->likes}}</td>
