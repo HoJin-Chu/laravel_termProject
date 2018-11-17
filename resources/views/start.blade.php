@@ -26,7 +26,7 @@
 	<div class="banner-sub-heading">
 	Here goes the secondary heading on hero banner
 	</div>
-	<button type="button" onclick="location.href='{{ url('index') }}'" class="btn btn-warning text-dark btn-banner">Get started</button>
+	<button type="button" onclick="location.href='{{ route('login') }}'" class="btn btn-warning text-dark btn-banner">Get started</button>
 	</div>
 	</div>
 </div>

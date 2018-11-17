@@ -10,6 +10,7 @@ use App\knowBoard;
 class KnowController extends Controller
 {
     
+    // 게시판 보여주기 -> 페이지네이션 
     public function KnowBoardIndex()
     {
         $items = knowBoard::
@@ -17,6 +18,7 @@ class KnowController extends Controller
         return view('knowPets.know',compact('items'));
     }
 
+    // 글작성페이지로 이동
     public function KnowCreateIndex()
     {
         return view('knowPets.knowCreate');
@@ -35,6 +37,8 @@ class KnowController extends Controller
         // 세션을 넘길때는 response
     }
 
+
+    // 작성한 글의 상세보기 
     public function KnowViewIndex(Request $request){
         
         $id = $request->id;
@@ -42,13 +46,41 @@ class KnowController extends Controller
         return view('knowPets.knowView')->with('msg', $msg);
     }
 
-    public function create(){}
+    // 글수정페이지로 이동
+    public function KnowModifyIndex(Request $request){
+        $id = $request->id;
+        $msg = knowBoard::find($id);
+        return view('knowPets.knowModify')->with('id',$id)->with('msg', $msg);
+    }
 
-    public function show($id){}
+    // 글수정 
+    public function KnowModifyInsert(Request $request){
 
-    public function edit($id){}
+        $id = $request->id;
+	    $title = $request->title;
+	    $writer = Auth::user()['name'];
+	    $content = $request->content;
 
-    public function update(Request $request, $id){}
-   
-    public function destroy($id){}
+        if($id && $title && $writer && $content){
+            $msg = knowBoard::find($id);
+            $msg->update([
+                'title' => $title,
+                'writer' => $writer,
+                'content' => $content,
+            ]);
+            return redirect()->route('petKnow')->with('message',$id . '번 글이 수정되었습니다 ! ');
+        }else{
+            // 모든값이 입력되야한다는 오류 메시지 or 에초에 방지 required
+            return "$id && $title && $writer && $content";
+        }
+    }
+
+    public function knowDelete(Request $request){
+        $id = $request->id;
+        
+        $msg = KnowBoard::find($id);
+        $msg->delete();
+
+        return redirect()->route('petKnow')->with('message',$id . '번 글이 삭제되었습니다 ! ');
+    }
 }

@@ -24,6 +24,10 @@ Route::get('petknow','KnowController@KnowBoardIndex')->name('petKnow'); // 펫�
 Route::get('petCreatePage','KnowController@KnowCreateIndex')->name('petCreatePage'); // 펫지식글작성페이지
 Route::post('petCreate','KnowController@KnowCreateInsert')->name('petCreate'); // 펫지식글작성
 Route::get('petViewPage','KnowController@KnowViewIndex')->name('petViewPage'); // 펫지식글보기페이지
+Route::get('petModifyPage','KnowController@KnowModifyIndex')->name('petModifyPage'); // 펫지식글수정페이지
+Route::post('petModify','KnowController@KnowModifyInsert')->name('petModify'); // 펫지식글작성
+Route::post('petDelete', 'KnowController@knowDelete')->name('petDelete'); // 해당글삭제
+
 
 //강아지 사이트 
 Route::get('petDog','DogController@DogBoardIndex')->name('petDog'); // 강아지사이트
