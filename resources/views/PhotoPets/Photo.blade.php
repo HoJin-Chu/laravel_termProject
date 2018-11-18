@@ -6,7 +6,6 @@
     }
 </style>
 @section('content')
-
 <div class="container">
        <div class="pull-right"  style="width:55%;margin-left:21%;padding:20px;">
                     <a href="" class="btn btn-block btn-outline-secondary pull-right">
@@ -37,14 +36,14 @@
                     </div>             
                </section>
                <section class="post-body">
-                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras 
+               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras 
                    turpis sem, dictum id bibendum eget, malesuada ut massa. Ut scel
                    erisque nulla sed luctus dapibus. Nulla sit amet mi vitae purus sol
                    licitudin venenatis. Praesent et sem urna. Integer vitae lectus nis
                    l. Fusce sapien ante, tristique efficitur lorem et, laoreet ornare lib
                    ero. Nam fringilla leo orci. Vivamus semper quam nunc, sed ornare magna dignissim sed. Etiam interdum justo quis risus
                    efficitur dictum. Nunc ut pulvinar quam. N
-                   unc mollis, est a dapibus dignissim, eros elit tempor diam, eu tempus quam felis eu velit.</p>
+                   unc mollis, est a dapibus dignissim, eros elit tempor diam, eu tempus quam felis eu velit.</p> 
                </section>
                <section class="post-footer">
                    <hr>
@@ -60,4 +59,5 @@
         </div>   
 	</div>
 </div>
+
 @endsection

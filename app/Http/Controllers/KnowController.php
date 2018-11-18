@@ -18,6 +18,14 @@ class KnowController extends Controller
         return view('knowPets.know',compact('items'));
     }
 
+    function fetch_data(Request $request){
+        if($request->ajax()){
+            $items = knowBoard::
+            orderBy('id','desc')->paginate(10);
+            return view('knowPets.knowPageData',compact('items'))->render();
+        }
+    }
+
     // 글작성페이지로 이동
     public function KnowCreateIndex()
     {
@@ -44,6 +52,24 @@ class KnowController extends Controller
         $id = $request->id;
         $msg = knowBoard::find($id);
         return view('knowPets.knowView')->with('msg', $msg);
+    }
+
+    // id에 대한 댓글을 보여줘야함
+    // public function KnowReplyIndex()
+    // {
+    //     $items = reply::
+    //     orderBy('id','desc')->all();
+    //     return view('knowPets.knowView',compact('items'));
+    // }
+
+    public function KnowReplyInsert(Request $request){
+        $writer = Auth::user()['name'];
+        $reply = new reply;
+        $reply->writer = $writer;
+        $reply->reContent = $request->reContent;
+        $reply->save();
+
+        return redirect()->route('petViewPage');
     }
 
     // 글수정페이지로 이동

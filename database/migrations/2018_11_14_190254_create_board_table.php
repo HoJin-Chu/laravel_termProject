@@ -13,7 +13,7 @@ class CreateBoardTable extends Migration
      */
     public function up()
     {
-        Schema::create('boards', function (Blueprint $table) {
+        Schema::create('knowboards', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title',100);
             $table->string('writer',100);

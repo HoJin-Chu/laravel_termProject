@@ -48,7 +48,7 @@
         </tbody>
     </table>    
 
-      <div class="card-footer">
+    <div class="card-footer">
             <div class="pull-right" style="margin: 5px">
               <small>총 댓글수</small> <b>50.00s</b></div><br>
             @if(Auth::check())
@@ -65,6 +65,22 @@
             @else
             <div class="text-center"><small>로그인한 회원만 댓글을 작성 할수있습니다</small></div>
             @endif
-            </div>
+            <hr>
+            <table class="table table">
+			<tr>
+				<td>
+					&nbsp;&nbsp;
+					<small></small>
+					<span style="float:right;">
+					&nbsp;&nbsp;<a href="" class="btn btn-sm btn-dark">수정</a>
+					&nbsp;&nbsp;<a href="" class="btn btn-sm btn-dark">삭제</a>
+					</span>
+				</td>
+			</tr>
+			<tr>
+				<td style="height:50px"></td>
+			</tr>
+			</table>
+    </div>
 </div>
 @endsection

@@ -33,6 +33,8 @@ Route::get('petModifyPage','KnowController@KnowModifyIndex')->name('petModifyPag
 Route::post('petModify','KnowController@KnowModifyInsert')->name('petModify'); // 펫지식글작성
 Route::post('petDelete', 'KnowController@knowDelete')->name('petDelete'); // 해당글삭제
 
+// pagenations
+Route::get('petknow/fetch_data','KnowController@fetch_data');
 
 //이미지게시판 사이트 
 Route::get('petPhoto','PhotoController@PetBoardIndex')->name('petPhoto'); // 이미지게시판사이트
