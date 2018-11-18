@@ -1,86 +1,63 @@
 @extends('layouts.app')
-<link href="{{ asset('css/cat.css') }}" rel="stylesheet">
+<link href="{{ asset('css/photo.css') }}" rel="stylesheet">
+<style>
+    html{
+        font-size : 15px;
+    }
+</style>
 @section('content')
+
 <div class="container">
-    <div class="jumbotron"></div>
-   <div class="card shopping-cart">
-            <div class="card-header bg-dark text-light">
-                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                ANIMAL PLACE
-                <div class="clearfix"></div>
-            </div>
-            <div class="card-body">
-                    <!-- PRODUCT -->
-                    <div class="row">
-                        <div class="col-12 col-sm-12 col-md-2 text-center">
-                                <img class="img-responsive" src="http://placehold.it/120x80" alt="prewiew" width="120" height="80">
-                        </div>
-                        <div class="col-12 text-sm-center col-sm-12 text-md-left col-md-6">
-                            <h4 class="product-name"><strong>Product Name</strong></h4>
-                            <h4>
-                                <small>Product description</small>
-                            </h4>
-                        </div>
-                        <div class="col-12 col-sm-12 text-sm-center col-md-4 text-md-right row">
-                            <div class="col-3 col-sm-3 col-md-6 text-md-right" style="padding-top: 5px">
-                                <h6><strong>25.00 <span class="text-muted">x</span></strong></h6>
-                            </div>
-                            <div class="col-4 col-sm-4 col-md-4">
-                                <div class="quantity">
-                                    <input type="button" value="+" class="plus">
-                                    <input type="number" step="1" max="99" min="1" value="1" title="Qty" class="qty"
-                                           size="4">
-                                    <input type="button" value="-" class="minus">
-                                </div>
-                            </div>
-                            <div class="col-2 col-sm-2 col-md-2 text-right">
-                                <button type="button" class="btn btn-outline-danger btn-xs">
-                                    <i class="fa fa-trash" aria-hidden="true"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <hr>
-                    <!-- END PRODUCT -->
-                    <!-- PRODUCT -->
-                    <div class="row">
-                        <div class="col-12 col-sm-12 col-md-2 text-center">
-                                <img class="img-responsive" src="http://placehold.it/120x80" alt="prewiew" width="120" height="80">
-                        </div>
-                        <div class="col-12 text-sm-center col-sm-12 text-md-left col-md-6">
-                            <h4 class="product-name"><strong>Product Name</strong></h4>
-                            <h4>
-                                <small>Product description</small>
-                            </h4>
-                        </div>
-                        <div class="col-12 col-sm-12 text-sm-center col-md-4 text-md-right row">
-                            <div class="col-3 col-sm-3 col-md-6 text-md-right" style="padding-top: 5px">
-                                <h6><strong>25.00 <span class="text-muted">x</span></strong></h6>
-                            </div>
-                            <div class="col-4 col-sm-4 col-md-4">
-                                <div class="quantity">
-                                    <input type="button" value="+" class="plus">
-                                    <input type="number" step="1" max="99" min="1" value="1" title="Qty" class="qty"
-                                           size="4">
-                                    <input type="button" value="-" class="minus">
-                                </div>
-                            </div>
-                            <div class="col-2 col-sm-2 col-md-2 text-right">
-                                <button type="button" class="btn btn-outline-danger btn-xs">
-                                    <i class="fa fa-trash" aria-hidden="true"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <hr>
-                    <!-- END PRODUCT -->
-                <div class="pull-right">
+       <div class="pull-right"  style="width:55%;margin-left:21%;padding:20px;">
                     <a href="" class="btn btn-block btn-outline-secondary pull-right">
                         작성하기
                     </a>
                 </div>
+	<div class="col-md-7" style="margin-left:20%;">
+        <div class="card card-default">
+            <div class="card-body" >
+               <section class="post-heading">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="media">
+                              <div class="media-left">
+                                <a href="#">
+                                  <img class="media-object photo-profile" src="http://0.gravatar.com/avatar/38d618563e55e6082adf4c8f8c13f3e4?s=40&d=mm&r=g" width="40" height="40" alt="...">
+                                </a>
+                              </div>
+                              <div class="media-body">
+                                <a href="#" class="anchor-username"><h4 class="media-heading">Bayu Darmantra</h4></a> 
+                                <a href="#" class="anchor-time">51 mins</a>
+                              </div>
+                            </div>
+                        </div>
+                         <div class="col-md-1">
+                             <a href="#"><i class="glyphicon glyphicon-chevron-down"></i></a>
+                         </div>
+                    </div>             
+               </section>
+               <section class="post-body">
+                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras 
+                   turpis sem, dictum id bibendum eget, malesuada ut massa. Ut scel
+                   erisque nulla sed luctus dapibus. Nulla sit amet mi vitae purus sol
+                   licitudin venenatis. Praesent et sem urna. Integer vitae lectus nis
+                   l. Fusce sapien ante, tristique efficitur lorem et, laoreet ornare lib
+                   ero. Nam fringilla leo orci. Vivamus semper quam nunc, sed ornare magna dignissim sed. Etiam interdum justo quis risus
+                   efficitur dictum. Nunc ut pulvinar quam. N
+                   unc mollis, est a dapibus dignissim, eros elit tempor diam, eu tempus quam felis eu velit.</p>
+               </section>
+               <section class="post-footer">
+                   <hr>
+                   <div class="post-footer-option container">
+                        <ul class="list-unstyled">
+                            <li><a href="#"><i class="glyphicon glyphicon-thumbs-up"></i> Like</a></li>
+                            <li><a href="#"><i class="glyphicon glyphicon-comment"></i> Comment</a></li>
+                            <li><a href="#"><i class="glyphicon glyphicon-share-alt"></i> Share</a></li>
+                        </ul>
+                   </div>
+               </section>
             </div>
-            
-        </div>
+        </div>   
+	</div>
 </div>
 @endsection

@@ -40,7 +40,14 @@ Route::get('petPhoto','PhotoController@PetBoardIndex')->name('petPhoto'); // 이
 //병원 사이트 
 Route::get('petHos','HospitalController@HosBoardIndex')->name('petHos'); // 병원
 
+//뽐내기 사이트
+Route::get('petShow','ShowController@ShowBoardIndex')->name('petShow');
+
 Auth::routes();
+
+// 구글
+Route::get('/redirect', 'SocialAuthGoogleController@redirect');
+Route::get('/callback', 'SocialAuthGoogleController@callback');
 
 Route::get('/home', 'HomeController@index')->name('home');
 

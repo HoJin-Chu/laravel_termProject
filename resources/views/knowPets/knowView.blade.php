@@ -51,6 +51,7 @@
       <div class="card-footer">
             <div class="pull-right" style="margin: 5px">
               <small>총 댓글수</small> <b>50.00s</b></div><br>
+            @if(Auth::check())
                 <div class="coupon col-md-12 col-sm-12 no-padding-left pull-left">
                     <div class="row">
                         <div class="col-10">
@@ -61,6 +62,9 @@
                         </div>
                     </div>
                 </div>
+            @else
+            <div class="text-center"><small>로그인한 회원만 댓글을 작성 할수있습니다</small></div>
+            @endif
             </div>
 </div>
 @endsection

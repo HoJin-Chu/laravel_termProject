@@ -53,10 +53,10 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" style="width:50%" class="btn btn-block btn-primary">
                                     {{ __('Login') }}
                                 </button>
-
+                                <a href="{{ url('/redirect') }}"><img src="{{asset('img/google.jpg')}}" alt="google" width="50%"></a>
                                 <a class="btn btn-link" href="{{ route('password.request') }}">
                                     {{ __('Forgot Your Password?') }}
                                 </a>
