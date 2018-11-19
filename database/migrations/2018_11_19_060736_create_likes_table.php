@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateBoardTable extends Migration
+class CreateLikesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,12 @@ class CreateBoardTable extends Migration
      */
     public function up()
     {
-        Schema::create('knowboards', function (Blueprint $table) {
+        Schema::create('likes', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title',100);
-            $table->string('writer',100);
-            $table->text('content');
-            $table->integer('hits');
-            $table->integer('likes');
+            $table->string('boardWriter');
+            $table->string('likeWriter');
             $table->timestamps();
         });
-
-        
     }
 
     /**
@@ -33,6 +28,6 @@ class CreateBoardTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('boards');
+        Schema::dropIfExists('likes');
     }
 }

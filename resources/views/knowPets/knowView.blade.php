@@ -53,33 +53,45 @@
               <small>총 댓글수</small> <b>50.00s</b></div><br>
             @if(Auth::check())
                 <div class="coupon col-md-12 col-sm-12 no-padding-left pull-left">
+                <form action="{{ route('KnowReply') }}" method="post">
+                @csrf
+                <input type="hidden" name="id" value="{{ $msg['id'] }}">
                     <div class="row">
                         <div class="col-10">
-                            <input type="text" class="form-control" style="height:50px" placeholder="cupone code">
+                            <input type="text" name="reContent" class="form-control" style="height:50px" placeholder="cupone code">
                         </div>
                         <div class="col-2">
                             <input type="submit" class="btn btn-defalut btn-lg" value="Use cupone">
                         </div>
                     </div>
+                </form>
                 </div>
             @else
             <div class="text-center"><small>로그인한 회원만 댓글을 작성 할수있습니다</small></div>
             @endif
             <hr>
             <table class="table table">
+            <tr>
+            <td>작성자</td>
+            <td>댓글내용</td>
+            <td>등록날짜</td>
+            <td>컨텐츠</td>
+            </tr>
+            @foreach($items as $item)
 			<tr>
 				<td>
-					&nbsp;&nbsp;
-					<small></small>
-					<span style="float:right;">
-					&nbsp;&nbsp;<a href="" class="btn btn-sm btn-dark">수정</a>
-					&nbsp;&nbsp;<a href="" class="btn btn-sm btn-dark">삭제</a>
-					</span>
-				</td>
+            <input type="button" class="btn btn-primary btn-sm" value="{{$item->writer}}"/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </td>
+                <td>{{$item->reContent}}</td>
+                <td><small>{{$item->created_at}}</small></td>
+                <td>
+                <a href="" class="btn btn-sm btn-dark">수정</a>
+                <a href="" class="btn btn-sm btn-dark">삭제</a>
+                </td>
 			</tr>
-			<tr>
-				<td style="height:50px"></td>
-			</tr>
+            @endforeach
+		
 			</table>
     </div>
 </div>

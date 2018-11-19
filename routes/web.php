@@ -32,9 +32,10 @@ Route::get('petViewPage','KnowController@KnowViewIndex')->name('petViewPage'); /
 Route::get('petModifyPage','KnowController@KnowModifyIndex')->name('petModifyPage'); // 펫지식글수정페이지
 Route::post('petModify','KnowController@KnowModifyInsert')->name('petModify'); // 펫지식글작성
 Route::post('petDelete', 'KnowController@knowDelete')->name('petDelete'); // 해당글삭제
-
 // pagenations
 Route::get('petknow/fetch_data','KnowController@fetch_data');
+// KnowReply
+Route::post('petViewPage','KnowController@KnowReplyInsert')->name('KnowReply');
 
 //이미지게시판 사이트 
 Route::get('petPhoto','PhotoController@PetBoardIndex')->name('petPhoto'); // 이미지게시판사이트
@@ -50,6 +51,12 @@ Auth::routes();
 // 구글
 Route::get('/redirect', 'SocialAuthGoogleController@redirect');
 Route::get('/callback', 'SocialAuthGoogleController@callback');
+
+// GIT
+Route::get('social/{provider}',[
+    'as' => 'social.login',
+    'uses' => 'SocialController@execute',
+]);
 
 Route::get('/home', 'HomeController@index')->name('home');
 

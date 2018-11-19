@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateBoardTable extends Migration
+class CreateBoardModifyTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,11 @@ class CreateBoardTable extends Migration
      */
     public function up()
     {
-        Schema::create('knowboards', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('title',100);
-            $table->string('writer',100);
-            $table->text('content');
-            $table->integer('hits');
+        Schema::table('knowboards', function ($table) {
+            $table->string('imgPath',200);
+            $table->string('BoardType');
             $table->integer('likes');
-            $table->timestamps();
         });
-
-        
     }
 
     /**
@@ -33,6 +27,6 @@ class CreateBoardTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('boards');
+        Schema::dropIfExists('knowboards');
     }
 }

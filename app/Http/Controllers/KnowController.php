@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use App\knowBoard;
+use App\reply;
 
 class KnowController extends Controller
 {
@@ -47,29 +48,29 @@ class KnowController extends Controller
 
 
     // 작성한 글의 상세보기 
+    // 댓글을 그 해당 게시글의 번호에맞는 댓글을 보여주어야함
     public function KnowViewIndex(Request $request){
         
         $id = $request->id;
         $msg = knowBoard::find($id);
-        return view('knowPets.knowView')->with('msg', $msg);
+		$msg->Hits += 1;
+        $items = reply::where('boardId','=',$id)->orderBy('boardId','desc')->get();
+        $msg->save();
+        return view('knowPets.knowView')->with('msg', $msg)->with('items',$items);
     }
 
-    // id에 대한 댓글을 보여줘야함
-    // public function KnowReplyIndex()
-    // {
-    //     $items = reply::
-    //     orderBy('id','desc')->all();
-    //     return view('knowPets.knowView',compact('items'));
-    // }
-
     public function KnowReplyInsert(Request $request){
+        $id = $request->id;
+        $msg = knowBoard::find($id);
+
         $writer = Auth::user()['name'];
         $reply = new reply;
+        $reply->boardId = $id;
         $reply->writer = $writer;
         $reply->reContent = $request->reContent;
         $reply->save();
-
-        return redirect()->route('petViewPage');
+        $items = reply::where('boardId','=',$id)->orderBy('reNo','desc')->get();
+        return view('knowPets.knowView')->with('msg', $msg)->with('items',$items);
     }
 
     // 글수정페이지로 이동

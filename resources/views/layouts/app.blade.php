@@ -82,7 +82,7 @@
         
     </div>
     
-<footer class="container-fluid footer-dark bg-dark text-center foot">
+<footer class="container-fluid footer-dark bg-dark text-center foot" style="margin-top:13vh">
 
 <div class="copyrights">
     <p class="white-txt">Your Site Name © 2017
