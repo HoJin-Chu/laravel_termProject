@@ -57,6 +57,7 @@
                                     {{ __('Login') }}
                                 </button>
                                 <a href="{{ url('/redirect') }}"><img src="{{asset('img/google.jpg')}}" alt="google" width="50%"></a>
+                                <a href="{{ route('social.login',['github']) }}" class="btn btn-dark btn-lg "> Github 계정으로 로그인하기</a>
                                 <a class="btn btn-link" href="{{ route('password.request') }}">
                                     {{ __('Forgot Your Password?') }}
                                 </a>
