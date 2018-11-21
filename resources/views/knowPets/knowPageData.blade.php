@@ -9,8 +9,9 @@
         @foreach($items as $item)
         <tr>
             <td>{{$item->id}}</td>
-            <td><a href="/petViewPage?id={{$item["id"]}}">{{$item->title}}</a></td>
-            <td>{{$item->writer}}</td>
+            <td><a href="{{route('petViewPage',['boardType'=>$item->BoardType,
+                'id'=>$item->id])}}">{{$item->title}}</a></td>
+            <td>{{$item->writer}}</td>           
             <td>{{$item->hits}}</td>
             <td>{{$item->likes}}</td>
         </tr>

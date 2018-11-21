@@ -25,12 +25,12 @@ Route::get('myPage',function(){
     return view('myPage');
 });
 
-Route::get('petknow','KnowController@KnowBoardIndex')->name('petKnow'); // 펫지식사이트
+Route::get('petKnow/{boardType}','KnowController@KnowBoardIndex')->name('petKnow'); // 펫지식사이트
 Route::get('petCreatePage','KnowController@KnowCreateIndex')->name('petCreatePage'); // 펫지식글작성페이지
 Route::post('petCreate','KnowController@KnowCreateInsert')->name('petCreate'); // 펫지식글작성
-Route::get('petViewPage','KnowController@KnowViewIndex')->name('petViewPage'); // 펫지식글보기페이지
+Route::get('petViewPage/{boardType}','KnowController@KnowViewIndex')->name('petViewPage'); // 펫지식글보기페이지
 Route::get('petModifyPage','KnowController@KnowModifyIndex')->name('petModifyPage'); // 펫지식글수정페이지
-Route::post('petModify','KnowController@KnowModifyInsert')->name('petModify'); // 펫지식글작성
+Route::post('petModify/{boardType}','KnowController@KnowModifyInsert')->name('petModify'); // 펫지식글작성
 Route::post('petDelete', 'KnowController@knowDelete')->name('petDelete'); // 해당글삭제
 // pagenations
 Route::get('petknow/fetch_data','KnowController@fetch_data');
@@ -38,13 +38,13 @@ Route::get('petknow/fetch_data','KnowController@fetch_data');
 Route::post('petViewPage','KnowController@KnowReplyInsert')->name('KnowReply');
 
 //이미지게시판 사이트 
-Route::get('petPhoto','PhotoController@PetBoardIndex')->name('petPhoto'); // 이미지게시판사이트
+Route::get('petPhoto/{boardType}','PhotoController@PetBoardIndex')->name('petPhoto'); // 이미지게시판사이트
 
 //병원 사이트 
 Route::get('petHos','HospitalController@HosBoardIndex')->name('petHos'); // 병원
 
 //뽐내기 사이트
-Route::get('petShow','ShowController@ShowBoardIndex')->name('petShow');
+Route::get('petShow/{boardType}','ShowController@ShowBoardIndex')->name('petShow');
 
 Auth::routes();
 

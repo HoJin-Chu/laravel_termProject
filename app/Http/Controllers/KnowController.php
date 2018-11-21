@@ -12,8 +12,12 @@ class KnowController extends Controller
 {
     
     // 게시판 보여주기 -> 페이지네이션 
-    public function KnowBoardIndex()
+    public function KnowBoardIndex(Request $request)
     {
+        // 여기서 오늘 작업해야하는것이 어느게시판인지 구분해서 
+        // 해당 게시글만 해당게시판에 뿌려준다
+        $boardType = $request->boardType;
+
         $items = knowBoard::
         orderBy('id','desc')->paginate(10); 
         return view('knowPets.know',compact('items'));
@@ -40,9 +44,9 @@ class KnowController extends Controller
         $knowBoard->title = $request->title;
         $knowBoard->writer = $writer;
         $knowBoard->content = $request->content;
+        $knowBoard->BoardType = $request->BoardType;
         $knowBoard->save();
-
-        return redirect()->route('petKnow');
+        return redirect()->route('petKnow',[1]);
         // 세션을 넘길때는 response
     }
 
@@ -95,7 +99,7 @@ class KnowController extends Controller
                 'writer' => $writer,
                 'content' => $content,
             ]);
-            return redirect()->route('petKnow')->with('message',$id . '번 글이 수정되었습니다 ! ');
+            return redirect()->route('petKnow',[1])->with('message',$id . '번 글이 수정되었습니다 ! ');
         }else{
             // 모든값이 입력되야한다는 오류 메시지 or 에초에 방지 required
             return "$id && $title && $writer && $content";
@@ -108,6 +112,6 @@ class KnowController extends Controller
         $msg = KnowBoard::find($id);
         $msg->delete();
 
-        return redirect()->route('petKnow')->with('message',$id . '번 글이 삭제되었습니다 ! ');
+        return redirect()->route('petKnow',[1])->with('message',$id . '번 글이 삭제되었습니다 ! ');
     }
 }

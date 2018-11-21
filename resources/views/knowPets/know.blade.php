@@ -12,7 +12,7 @@
     
 <script>
     $(document).ready(function(){
-        $(document).on('click','.pagination a',function(event){
+        $(document).on('click','. a',function(event){
             event.preventDefault();
             var page = $(this).attr('href').split('page=')[1];
             fetch_data(page);

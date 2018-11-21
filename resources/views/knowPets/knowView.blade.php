@@ -15,7 +15,7 @@
             </tr>
             <tr>
                 <td>{{$msg['writer']}}</td>
-                <td>{{$msg['updated_at']}}</a></td>
+                <td>{{$msg['updated_at']}}</a></td>s
                 <td>{{$msg['hits']}}</td>
                 <td>{{$msg['likes']}}</td>
             </tr>
@@ -31,7 +31,7 @@
             </tr>
             <tr>
                 <td colspan="1">
-                <a href="{{ route('petKnow') }}" class="pull-right btn btn-success btn-block ">목록보기</a>
+                <a href="{{ route('petKnow',['boardType'=>$msg['BoardType']]) }}" class="pull-right btn btn-success btn-block ">목록보기</a>
                 </td>
                 
                 <td colspan="3">

@@ -4,7 +4,8 @@
 
 <div class="container">
 			<div class="formBox">
-				<form method="POST" action="/petModify?id={{$msg["id"]}}">
+				<form method="POST" action="{{route('petModify',['boardType'=>$msg->BoardType,
+                'id'=>$msg->id])}}">
                     @csrf
 						<div class="row">
 							<div class="col-sm-12">
@@ -33,7 +34,8 @@
 							</div>
 						</div>
 				</form>
-				<a href="/petViewPage?id={{$msg["id"]}}" class="btn btn btn-block">돌아가기</a>
+				<a href="{{route('petViewPage',['boardType'=>$msg->BoardType,
+                'id'=>$msg->id])}}" class="btn btn btn-block">돌아가기</a>
 			</div>
 		</div>
     </div>

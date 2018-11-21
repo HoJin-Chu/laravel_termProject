@@ -4,8 +4,9 @@
 
 <div class="container">
 			<div class="formBox">
-				<form method="POST" action="{{ route('petCreate') }}">
+				<form method="POST" action="{{route('petCreate')}}">
                     @csrf
+					<input type="hidden" name="BoardType" value="1"/>  
 						<div class="row">
 							<div class="col-sm-12">
 								<h2>Creates</h2>
@@ -26,7 +27,6 @@
 								</div>
 							</div>
 						</div>
-
 						<div class="row">
 							<div class="col-sm-12">
 								<input type="submit" class="button" value="작성하기">
