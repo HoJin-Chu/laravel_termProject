@@ -82,24 +82,16 @@
                   </tr>
                 </thead><br>
                 <tbody>
+                {{ $num = 1 }}
+                @foreach($days as $day)
                   <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
+                    <th scope="row">{{$num}}</th>
+                    <td>{{$day->writer}}</td>
+                    <td>{{$day->title}}</td>
+                    <td>{{$day->hits}}</td>
                   </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>@twitter</td>
-                  </tr>
+                  {{ $num = $num+1 }} 
+                @endforeach
                 </tbody>
               </table>
             </div>
@@ -120,24 +112,16 @@
                   </tr><br>
                 </thead>
                 <tbody>
+                {{ $num = 1 }}
+                @foreach($hitsBoards as $hitsBoard)
                   <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
+                    <th scope="row">{{$num}}</th>
+                    <td>{{$hitsBoard->writer}}</td>
+                    <td>{{$hitsBoard->title}}</td>
+                    <td>{{$hitsBoard->hits}}</td>
                   </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>@twitter</td>
-                  </tr>
+                  {{ $num = $num+1 }} 
+                @endforeach
                 </tbody>
               </table>
             </div>

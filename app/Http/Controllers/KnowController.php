@@ -17,8 +17,7 @@ class KnowController extends Controller
         // 여기서 오늘 작업해야하는것이 어느게시판인지 구분해서 
         // 해당 게시글만 해당게시판에 뿌려준다
         $boardType = $request->boardType;
-
-        $items = knowBoard::
+        $items = knowBoard::where('boardType','=',$boardType)->
         orderBy('id','desc')->paginate(10); 
         return view('knowPets.know',compact('items'));
     }
@@ -57,7 +56,7 @@ class KnowController extends Controller
         
         $id = $request->id;
         $msg = knowBoard::find($id);
-		$msg->Hits += 1;
+		$msg->hits += 1;
         $items = reply::where('boardId','=',$id)->orderBy('boardId','desc')->get();
         $msg->save();
         return view('knowPets.knowView')->with('msg', $msg)->with('items',$items);

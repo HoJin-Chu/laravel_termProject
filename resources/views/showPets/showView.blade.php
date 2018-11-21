@@ -31,13 +31,13 @@
             </tr>
             <tr>
                 <td colspan="1">
-                <a href="{{ route('petKnow',['boardType'=>$msg['BoardType']]) }}" class="pull-right btn btn-success btn-block ">목록보기</a>
+                <a href="{{ route('petShow',['boardType'=>$msg['BoardType']]) }}" class="pull-right btn btn-success btn-block ">목록보기</a>
                 </td>
                 
                 <td colspan="3">
                 <div style="display:flex;">
-                <a href="/petModifyPage?id={{$msg["id"]}}" class="btn btn-primary">수정</a>
-                <form action="/petDelete" method="post">
+                <a href="/ShowModifyPage?id={{$msg["id"]}}" class="btn btn-primary">수정</a>
+                <form action="/ShowDelete" method="post">
                 @csrf
                 <input type="hidden" name="id" value="{{ $msg['id'] }}"/>
                 <input type="submit" class="pull-right btn btn-danger" value="삭제"/>
@@ -53,7 +53,7 @@
               <small>총 댓글수</small> <b>50.00s</b></div><br>
             @if(Auth::check())
                 <div class="coupon col-md-12 col-sm-12 no-padding-left pull-left">
-                <form action="{{ route('KnowReply') }}" method="post">
+                <form action="{{ route('ShowReply') }}" method="post">
                 @csrf
                 <input type="hidden" name="id" value="{{ $msg['id'] }}">
                     <div class="row">

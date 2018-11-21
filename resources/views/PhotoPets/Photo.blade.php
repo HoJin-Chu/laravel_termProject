@@ -8,11 +8,12 @@
 @section('content')
 <div class="container">
        <div class="pull-right"  style="width:55%;margin-left:21%;padding:20px;">
-                    <a href="" class="btn btn-block btn-outline-secondary pull-right">
+                    <a href="{{ route('PhotoCreatePage') }}" class="btn btn-block btn-outline-secondary pull-right">
                         작성하기
                     </a>
                 </div>
-	<div class="col-md-7" style="margin-left:20%;">
+                @foreach($items as $item)
+	<div class="col-md-7" style="margin-left:20%;margin-bottom:30px;">
         <div class="card card-default">
             <div class="card-body" >
                <section class="post-heading">
@@ -25,8 +26,9 @@
                                 </a>
                               </div>
                               <div class="media-body">
-                                <a href="#" class="anchor-username"><h4 class="media-heading">Bayu Darmantra</h4></a> 
-                                <a href="#" class="anchor-time">51 mins</a>
+                                <a href="#" class="anchor-username"><h4 class="media-heading" >{{$item->writer}}</h4></a>
+               <small>{{$item->created_at}}</small>
+
                               </div>
                             </div>
                         </div>
@@ -36,28 +38,37 @@
                     </div>             
                </section>
                <section class="post-body">
-               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras 
-                   turpis sem, dictum id bibendum eget, malesuada ut massa. Ut scel
-                   erisque nulla sed luctus dapibus. Nulla sit amet mi vitae purus sol
-                   licitudin venenatis. Praesent et sem urna. Integer vitae lectus nis
-                   l. Fusce sapien ante, tristique efficitur lorem et, laoreet ornare lib
-                   ero. Nam fringilla leo orci. Vivamus semper quam nunc, sed ornare magna dignissim sed. Etiam interdum justo quis risus
-                   efficitur dictum. Nunc ut pulvinar quam. N
-                   unc mollis, est a dapibus dignissim, eros elit tempor diam, eu tempus quam felis eu velit.</p> 
+               <small><b>TITLE : {{$item->title}} / 좋아요 {{$item->likes}} </b></small>
+               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               <br>
+               <br>
+               </section>
+               <section class="post-body">
+               <h2>{{$item->content}}</h2> 
                </section>
                <section class="post-footer">
                    <hr>
                    <div class="post-footer-option container">
                         <ul class="list-unstyled">
-                            <li><a href="#"><i class="glyphicon glyphicon-thumbs-up"></i> Like</a></li>
-                            <li><a href="#"><i class="glyphicon glyphicon-comment"></i> Comment</a></li>
-                            <li><a href="#"><i class="glyphicon glyphicon-share-alt"></i> Share</a></li>
+                            <li><a href="#"><i class="glyphicon glyphicon-thumbs-up"></i>Like</a></li>
+                            <li><a href="{{route('PhotoViewPage',['boardType'=>$item->BoardType,
+                'id'=>$item->id])}}">
+                            Comment</a></li>
+                            <li><a href="/PhotoModifyPage?id={{$item["id"]}}"> Modify</a></li>
+                            <li><form action="/PhotoDelete" method="post">
+                @csrf
+                <input type="hidden" name="id" value="{{ $item['id'] }}"/>
+                <input type="submit" value="X"/>
+                </form></li>
                         </ul>
                    </div>
                </section>
             </div>
         </div>   
 	</div>
+    @endforeach
 </div>
-
+<div style="display:flex;justify-content:center">
+{{ $items->links() }}    
+</div>
 @endsection
