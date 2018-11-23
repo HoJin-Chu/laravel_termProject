@@ -16,7 +16,7 @@
               <a href="http://websitedesigntamilnadu.com" class="card-link">Another link</a>
             </div>
           </div>
-        </div>
+        </div>  
         <div class="col">
           <div class="card">
             <div class="card-body">
@@ -82,7 +82,7 @@
                   </tr>
                 </thead><br>
                 <tbody>
-                {{ $num = 1 }}
+                <input type="hidden" value="{{ $num = 1 }}">
                 @foreach($days as $day)
                   <tr>
                     <th scope="row">{{$num}}</th>
@@ -90,7 +90,7 @@
                     <td>{{$day->title}}</td>
                     <td>{{$day->hits}}</td>
                   </tr>
-                  {{ $num = $num+1 }} 
+                  <input type="hidden" value="{{ $num = $num+1 }}">
                 @endforeach
                 </tbody>
               </table>
@@ -112,7 +112,7 @@
                   </tr><br>
                 </thead>
                 <tbody>
-                {{ $num = 1 }}
+                <input type="hidden" value="{{ $num = 1 }}">
                 @foreach($hitsBoards as $hitsBoard)
                   <tr>
                     <th scope="row">{{$num}}</th>
@@ -120,7 +120,7 @@
                     <td>{{$hitsBoard->title}}</td>
                     <td>{{$hitsBoard->hits}}</td>
                   </tr>
-                  {{ $num = $num+1 }} 
+                  <input type="hidden" value="{{ $num = $num+1 }}">
                 @endforeach
                 </tbody>
               </table>

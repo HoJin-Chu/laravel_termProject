@@ -86,7 +86,7 @@ class ShowController extends Controller
                 'writer' => $writer,
                 'content' => $content,
             ]);
-            return redirect()->route('petShow',[1])->with('message',$id . '번 글이 수정되었습니다 ! ');
+            return redirect()->route('petShow',[3])->with('message',$id . '번 글이 수정되었습니다 ! ');
         }else{
             // 모든값이 입력되야한다는 오류 메시지 or 에초에 방지 required
             return "$id && $title && $writer && $content";
@@ -98,6 +98,6 @@ class ShowController extends Controller
         $msg = KnowBoard::find($id);
         $msg->delete();
 
-        return redirect()->route('petShow',[2])->with('message',$id . '번 글이 삭제되었습니다 ! ');
+        return redirect()->route('petShow',[3])->with('message',$id . '번 글이 삭제되었습니다 ! ');
     }
 }

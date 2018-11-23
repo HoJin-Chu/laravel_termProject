@@ -16,8 +16,6 @@
           <ul class="list-group">
             <li class="list-group-item text-muted">Activity <i class="fa fa-dashboard fa-1x"></i></li>
             <li class="list-group-item"><span class="pull-left"><strong>Shares</strong></span> 125</li>
-            <li class="list-group-item"><span class="pull-left"><strong>Likes</strong></span> 13</li>
-            <li class="list-group-item"><span class="pull-left"><strong>Posts</strong></span> 37</li>
 
           </ul> 
                
@@ -29,26 +27,21 @@
                   <form class="form" action="##" method="post" id="registrationForm">
                       <div class="form-group">
                           
-                          <div class="col-xs-6">
-                              <label for="first_name"><h4>ID</h4></label>
-                              <input type="text" class="form-control" name="first_name" id="first_name" placeholder="first name" title="enter your first name if any.">
-                          </div>
                       </div>
                       <div class="form-group">
                           <div class="col-xs-6">
                              <label for="mobile"><h4>Name</h4></label>
-                              <input type="text" class="form-control" name="mobile" id="mobile" placeholder="enter mobile number" title="enter your mobile number if any.">
+                              <input type="text" class="form-control" name="mobile" id="mobile" placeholder="enter mobile number" title="enter your mobile number if any." value="{{Illuminate\Support\Facades\Auth::user()['name']}}">
                           </div>
                       </div>
                       <div class="form-group">
                           
                           <div class="col-xs-6">
                               <label for="email"><h4>Email</h4></label>
-                              <input type="email" class="form-control" name="email" id="email" placeholder="you@email.com" title="enter your email.">
+                              <input type="email" class="form-control" name="email" id="email" placeholder="you@email.com" title="enter your email." value="{{Illuminate\Support\Facades\Auth::user()['email']}}">
                           </div>
                       </div>
                       <div class="form-group">
-                          
                           <div class="col-xs-6">
                               <label for="email"><h4>Password</h4></label>
                               <input type="email" class="form-control" id="location" placeholder="somewhere" title="enter a location">

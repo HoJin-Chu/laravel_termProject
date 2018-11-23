@@ -27,13 +27,11 @@
                         </div>
                         <div class="col-12 col-sm-12 text-sm-center col-md-4 text-md-right row">
                         <div class="col-4 col-sm-4 col-md-4">
-                                <label for="">조회수</label>
-                                <label for="">추천수</label>
                             </div>
-                            <div class="col-4 col-sm-4 col-md-4">
-                                <label for="">조회수</label>
-                                <label for="">추천수</label>
-                            </div>
+                            <div class="col-10 col-sm-10 col-md-10">
+                                <label for="">조회수{{$item->hits}}</label>
+                                <label for="">추천수{{$item->likes}}</label>
+                        </div>
                         </div>
                     </div>
                     <hr>
