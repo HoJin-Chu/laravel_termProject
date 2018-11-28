@@ -16,7 +16,7 @@
                     <!-- PRODUCT -->
                     <div class="row">
                         <div class="col-12 col-sm-12 col-md-2 text-center">
-                                <img class="img-responsive" src="http://placehold.it/120x80" alt="prewiew" width="120" height="80">
+                        <img src="{{ asset('img/'.$item->imgPath) }}" alt="titleImg" width="100%" height="15%">
                         </div>
                         <div class="col-12 text-sm-center col-sm-12 text-md-left col-md-6">
                             <h4 class="product-name"><strong>{{$item->writer}}</strong></h4>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\knowBoard;
+use App\Location;
 
 class HospitalController extends Controller
 {
@@ -14,8 +15,8 @@ class HospitalController extends Controller
      */
     public function HosBoardIndex()
     {
-        $items = knowBoard::paginate(6);
-        return view('HospitalPets.Hospital',compact('items'));
+        $locations = Location::get();
+        return view('HospitalPets.Hospital',compact('locations'));
     }
 
     /**

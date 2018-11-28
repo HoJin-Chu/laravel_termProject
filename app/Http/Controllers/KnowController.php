@@ -53,13 +53,13 @@ class KnowController extends Controller
     // 작성한 글의 상세보기 
     // 댓글을 그 해당 게시글의 번호에맞는 댓글을 보여주어야함
     public function KnowViewIndex(Request $request){
-        
         $id = $request->id;
         $msg = knowBoard::find($id);
-		$msg->hits += 1;
+        $msg->hits += 1;
+        $getter = reply::where('boardId',$id)->get();
         $items = reply::where('boardId','=',$id)->orderBy('boardId','desc')->get();
         $msg->save();
-        return view('knowPets.knowView')->with('msg', $msg)->with('items',$items);
+        return view('knowPets.knowView')->with('msg', $msg)->with('items',$items)->with('getter',$getter);
     }
 
     public function KnowReplyInsert(Request $request){
@@ -72,8 +72,9 @@ class KnowController extends Controller
         $reply->writer = $writer;
         $reply->reContent = $request->reContent;
         $reply->save();
+        $getter = reply::where('boardId',$id)->get();
         $items = reply::where('boardId','=',$id)->orderBy('reNo','desc')->get();
-        return view('knowPets.knowView')->with('msg', $msg)->with('items',$items);
+        return view('knowPets.knowView')->with('msg', $msg)->with('items',$items)->with('getter',$getter);
     }
 
     // 글수정페이지로 이동

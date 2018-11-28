@@ -62,13 +62,13 @@
                                     <a class="dropdown-item" href="{{ url('myPage') }}">
                                         마이페이지
                                     </a>
-                                   
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
                                     
                                 </div>
+                                <a href="{{ url('myMail') }}">나의쪽지함</a>
                             </li>
                         @endguest
                     </ul>

@@ -29,6 +29,11 @@ Route::get('myPage',function(){
     return view('myPage');
 });
 
+//마이페이지
+Route::get('myMail',function(){
+    return view('myMail');
+});
+
 // 글 커뮤니티사이트
 Route::get('petKnow/{boardType}','KnowController@KnowBoardIndex')->name('petKnow'); // 펫지식사이트
 Route::get('petCreatePage','KnowController@KnowCreateIndex')->name('petCreatePage'); // 펫지식글작성페이지
@@ -63,7 +68,6 @@ Route::post('showViewPage','ShowController@ShowReplyInsert')->name('ShowReply');
 
 //병원 사이트 
 Route::get('petHos','HospitalController@HosBoardIndex')->name('petHos'); // 병원
-
 
 // auth 
 Auth::routes();

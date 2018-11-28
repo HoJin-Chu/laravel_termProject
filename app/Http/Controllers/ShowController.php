@@ -30,10 +30,15 @@ class ShowController extends Controller
 
     public function ShowCreateInsert(Request $request){
         $writer = Auth::user()['name'];
+        $file=$request->file('imgPath');
+        $path='img';
+        $file->move($path,$file->getClientOriginalName());
+
         $knowBoard = new knowBoard;
         $knowBoard->title = $request->title;
         $knowBoard->writer = $writer;
         $knowBoard->content = $request->content;
+        $knowBoard->imgPath = $request->file('imgPath')->getClientOriginalName();
         $knowBoard->BoardType = $request->BoardType;
         $knowBoard->save();
         return redirect()->route('petShow',[3]);
