@@ -35,7 +35,7 @@
                          <div class="col-md-1">
                              <a href="#"><i class="glyphicon glyphicon-chevron-down"></i></a>
                          </div>
-                    </div>             
+                    </div>
                </section>
                <section class="post-body">
                <small><b>TITLE : {{$item->title}} / 좋아요 {{$item->likes}} </b></small>
@@ -44,7 +44,7 @@
                <br>
                </section>
                <section class="post-body">
-               <h2>{{$item->content}}</h2> 
+               <h2>{!! $item->content !!}</h2>
                </section>
                <section class="post-footer">
                    <hr>
@@ -64,11 +64,11 @@
                    </div>
                </section>
             </div>
-        </div>   
+        </div>
 	</div>
     @endforeach
 </div>
 <div style="display:flex;justify-content:center">
-{{ $items->links() }}    
+{{ $items->links() }}
 </div>
 @endsection

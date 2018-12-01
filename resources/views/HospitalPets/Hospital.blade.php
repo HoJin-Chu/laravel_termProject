@@ -9,15 +9,25 @@
       <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAEbRlSwgZm0GAlcIET02w2KJOPbRMgYg8&callback=initMap">
     </script>
   	<style type="text/css">
-	  html, body, #map-canvas {
-        height: 100%;
-        margin: 0;
-        padding: 0;
+      #wrap{
+          display:flex;
+      }
+    /* .impor{
+        width:30%;
+        height:700px;
+        border:1px solid;
+    } */
+	  #map-canvas {
+        width:100%;
+        height: 700px;
+
       }
   	</style>
 </head>
 <body>
-<div id="map-canvas"></div>
-
+    <div id="wrap">
+        <!-- <div class="impor"></div> -->
+        <div id="map-canvas"></div>
+    </div>
 </body>
 </html>

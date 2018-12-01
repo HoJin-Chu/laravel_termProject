@@ -47,8 +47,8 @@ return [
     ],
 
     'github' => [
-        'client_id' => env('GITHUB_ID'),
-        'client_secret' =>  env('GITHUB_SECRET'),
-        'redirect' =>  env('GITHUB_CALLBACK')
+        'client_id' => 'b13cd06b899bfd74da59',
+        'client_secret' =>  '25889769a68cc9d832d3b7ca1662177465e92ae1',
+        'redirect' =>  'http://hojin-chu.site/callbackgit'
     ],
 ];

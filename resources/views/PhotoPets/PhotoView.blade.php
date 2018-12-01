@@ -20,7 +20,7 @@
                 <td>{{$msg['likes']}}</td>
             </tr>
             <tr>
-            
+
                 <th colspan="4"><span class="pull-right">TITLE : {{$msg['title']}}</span></th>
             </tr></tr><tr>
             <tr>
@@ -33,7 +33,7 @@
                 <td colspan="1">
                 <a href="{{ route('petPhoto',['boardType'=>$msg['BoardType']]) }}" class="pull-right btn btn-success btn-block ">목록보기</a>
                 </td>
-                
+
                 <td colspan="3">
                 <div style="display:flex;">
                 <a href="/PhotoModifyPage?id={{$msg["id"]}}" class="btn btn-primary">수정</a>
@@ -46,7 +46,7 @@
                 </td>
             </tr>
         </tbody>
-    </table>    
+    </table>
 
     <div class="card-footer">
             <div class="pull-right" style="margin: 5px">
@@ -91,7 +91,7 @@
                 </td>
 			</tr>
             @endforeach
-		
+
 			</table>
     </div>
 </div>
