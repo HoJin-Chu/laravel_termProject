@@ -10,15 +10,15 @@ use App\reply;
 
 class KnowController extends Controller
 {
-    
-    // 게시판 보여주기 -> 페이지네이션 
+
+    // 게시판 보여주기 -> 페이지네이션
     public function KnowBoardIndex(Request $request)
     {
-        // 여기서 오늘 작업해야하는것이 어느게시판인지 구분해서 
+        // 여기서 오늘 작업해야하는것이 어느게시판인지 구분해서
         // 해당 게시글만 해당게시판에 뿌려준다
         $boardType = $request->boardType;
         $items = knowBoard::where('boardType','=',$boardType)->
-        orderBy('id','desc')->paginate(10); 
+        orderBy('id','desc')->paginate(10);
         return view('knowPets.know',compact('items'));
     }
 
@@ -45,12 +45,11 @@ class KnowController extends Controller
         $knowBoard->content = $request->content;
         $knowBoard->BoardType = $request->BoardType;
         $knowBoard->save();
-        return redirect()->route('petKnow',[1]);
+        return redirect()->route('petKnow',[1])->with('success','글을 성공적으로 작성했습니다 !');
         // 세션을 넘길때는 response
     }
 
-
-    // 작성한 글의 상세보기 
+    // 작성한 글의 상세보기
     // 댓글을 그 해당 게시글의 번호에맞는 댓글을 보여주어야함
     public function KnowViewIndex(Request $request){
         $id = $request->id;
@@ -84,7 +83,7 @@ class KnowController extends Controller
         return view('knowPets.knowModify')->with('id',$id)->with('msg', $msg);
     }
 
-    // 글수정 
+    // 글수정
     public function KnowModifyInsert(Request $request){
 
         $id = $request->id;
@@ -108,7 +107,7 @@ class KnowController extends Controller
 
     public function knowDelete(Request $request){
         $id = $request->id;
-        
+
         $msg = KnowBoard::find($id);
         $msg->delete();
 

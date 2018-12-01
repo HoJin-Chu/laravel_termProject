@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddNullableToPasswordColumnOnUsersTable extends Migration
+class CreateAddUserTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,7 @@ class AddNullableToPasswordColumnOnUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('password',60)->nullable()->change();
+            $table->string('google_id');
         });
     }
 
@@ -25,8 +25,6 @@ class AddNullableToPasswordColumnOnUsersTable extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->string('password',60)->nullable(false)->change();
-        });
+        Schema::dropIfExists('add_user');
     }
 }

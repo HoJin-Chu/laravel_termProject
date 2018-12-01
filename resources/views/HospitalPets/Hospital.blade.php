@@ -24,19 +24,20 @@
   	</style>
 </head>
 <body>
-  <h2 style="text-align:center;">동물병원 MAP</h2>	
+			{{ $hos[0]["시도명"] }}
+  <h2 style="text-align:center;">대구광역시 북구 동물병원 정보</h2>
 	<div class="wrap">
 		<div class="impormation"></div>
 		<div id="mymap"></div>
 	</div>
-	
+
   <script type="text/javascript">
     var locations = <?php print_r(json_encode($locations)) ?>;
     var mymap = new GMaps({
       el: '#mymap',
-      lat: 21.170240,
-      lng: 72.831061,
-      zoom:6
+      lat: 35.8857114,
+      lng: 128.5828073,
+      zoom:12
     });
     $.each( locations, function( index, value ){
 	    mymap.addMarker({

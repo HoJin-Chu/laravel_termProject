@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\knowBoard;
 use App\Location;
+use App\Hospital;
 
 class HospitalController extends Controller
 {
@@ -15,8 +16,11 @@ class HospitalController extends Controller
      */
     public function HosBoardIndex()
     {
+        $hos = json_decode(file_get_contents('hos.json'), true);
+        $hospital = new Hospital;
+        //$hospital->title = $hos->title;
         $locations = Location::get();
-        return view('HospitalPets.Hospital',compact('locations'));
+        return view('HospitalPets.Hospital',compact('locations','hos'));
     }
 
     /**

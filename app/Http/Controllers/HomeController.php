@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\knowBoard;
 
 class HomeController extends Controller
 {
@@ -23,6 +24,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('index');
+
+        $days = knowBoard::
+    orderBy('created_at','desc')->paginate(5);
+    $hitsBoards = knowBoard::
+    orderBy('hits','desc')->paginate(5);
+    return view('index')->with('days',$days)->with('hitsBoards',$hitsBoards);
+        return view('index')->with('days')->with('hitsBoards');
     }
 }

@@ -29,10 +29,13 @@ Route::get('myPage',function(){
     return view('myPage');
 });
 
-//마이페이지
-Route::get('myMail',function(){
-    return view('myMail');
-});
+// 받은메일함
+Route::get('recvMail','RecvMailController@RecvMailBoardIndex')->name('recvMail'); // 펫지식사이트
+
+// 보낸메일함
+Route::get('sendMail','SendMailController@SendMailBoardIndex')->name('sendMail'); // 펫지식사이트
+Route::post('WriteSend','SendMailController@SendMailInsert')->name('WriteSend'); // 보내기
+Route::get('readMail','SendMailController@SendMailView')->name('readMail'); // 보내기
 
 // 글 커뮤니티사이트
 Route::get('petKnow/{boardType}','KnowController@KnowBoardIndex')->name('petKnow'); // 펫지식사이트
@@ -45,7 +48,7 @@ Route::post('petDelete', 'KnowController@knowDelete')->name('petDelete'); // 해
 Route::get('petknow/fetch_data','KnowController@fetch_data');// pagenations
 Route::post('petViewPage','KnowController@KnowReplyInsert')->name('KnowReply');// KnowReply
 
-//이미지게시판 사이트 
+//이미지게시판 사이트
 Route::get('petPhoto/{boardType}','PhotoController@PhotoBoardIndex')->name('petPhoto'); // 이미지게시판사이트
 Route::get('PhotoCreatePage','PhotoController@PhotoCreateIndex')->name('PhotoCreatePage'); // 펫이스북글작성페이지
 Route::post('PhotoCreate','PhotoController@PhotoCreateInsert')->name('PhotoCreate'); // 펫이스북글작성
@@ -66,10 +69,10 @@ Route::post('ShowDelete', 'ShowController@ShowDelete')->name('ShowDelete'); // �
 Route::post('showViewPage','ShowController@ShowReplyInsert')->name('ShowReply');
 
 
-//병원 사이트 
+//병원 사이트
 Route::get('petHos','HospitalController@HosBoardIndex')->name('petHos'); // 병원
 
-// auth 
+// auth
 Auth::routes();
 
 // 구글

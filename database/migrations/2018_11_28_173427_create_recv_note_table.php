@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateBoardTable extends Migration
+class CreateRecvNoteTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,19 +13,15 @@ class CreateBoardTable extends Migration
      */
     public function up()
     {
-        Schema::create('knowboards', function (Blueprint $table) {
+        Schema::create('recv_note', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('recv_id',100);
+            $table->string('send_id',100);
             $table->string('title',100);
-            $table->string('writer',100);
             $table->text('content');
-            $table->integer('hits')->default(0);
-            $table->integer('likes')->default(0);
-            $table->string('imgPath',200);
-            $table->string('BoardType');
+            $table->string('file',100)->nullable();
             $table->timestamps();
         });
-
-        
     }
 
     /**
@@ -35,6 +31,6 @@ class CreateBoardTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('boards');
+        Schema::dropIfExists('recv_note');
     }
 }

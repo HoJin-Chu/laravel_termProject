@@ -66,9 +66,9 @@
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
-                                    
+                                    <a class="dropdown-item" href="{{ route('recvMail') }}">나의쪽지함</a>
                                 </div>
-                                <a href="{{ url('myMail') }}">나의쪽지함</a>
+
                             </li>
                         @endguest
                     </ul>
@@ -79,9 +79,9 @@
         <main class="py-4">
             @yield('content')
         </main>
-        
+
     </div>
-    
+
 <footer class="container-fluid footer-dark bg-dark text-center foot" style="margin-top:13vh">
 
 <div class="copyrights">
