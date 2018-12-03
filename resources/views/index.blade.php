@@ -9,33 +9,28 @@
         <div class="col">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">펫 지식</h5>
+              <h5 class="card-title">펫 지식<a href="{{ url('petKnow') }}/{{'1'}}" class="card-link"> Click</a></h5>
               <h6 class="card-subtitle mb-2 text-muted">다양한 동물들의 모든 지식을 공유 해보자 </h6>
               <p class="card-text">You can also try different version of Bootstrap V4 side menu. Click below link to view all Bootstrap Menu versions.</p>
-              <a href="{{ url('petKnow') }}/{{'1'}}" class="card-link">link</a>
-              <a href="http://websitedesigntamilnadu.com" class="card-link">Another link</a>
-            </div>
-          </div>
-        </div>  
-        <div class="col">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">펫이스북</h5>
-              <h6 class="card-subtitle mb-2 text-muted">Bootstrap 4.0.0 Snippet by pradeep330</h6>
-              <p class="card-text">You can also try different version of Bootstrap V4 side menu. Click below link to view all Bootstrap Menu versions.</p>
-              <a href="{{ url('petPhoto') }}/{{'2'}}" class="card-link">link</a>
-              <a href="http://websitedesigntamilnadu.com" class="card-link">Another link</a>
             </div>
           </div>
         </div>
         <div class="col">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">자랑하기</h5>
+              <h5 class="card-title">펫이스북<a href="{{ url('petPhoto') }}/{{'2'}}" class="card-link"> Click</a></h5>
               <h6 class="card-subtitle mb-2 text-muted">Bootstrap 4.0.0 Snippet by pradeep330</h6>
               <p class="card-text">You can also try different version of Bootstrap V4 side menu. Click below link to view all Bootstrap Menu versions.</p>
-              <a href="{{ url('petShow') }}/{{'3'}}" class="card-link">link</a>
-              <a href="http://websitedesigntamilnadu.com" class="card-link">Another link</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <div class="card-body">
+
+              <h5 class="card-title">자랑하기<a href="{{ url('petShow') }}/{{'3'}}" class="card-link"> Click</a></h5>
+              <h6 class="card-subtitle mb-2 text-muted">Bootstrap 4.0.0 Snippet by pradeep330</h6>
+              <p class="card-text">You can also try different version of Bootstrap V4 side menu. Click below link to view all Bootstrap Menu versions.</p>
             </div>
           </div>
         </div>
@@ -44,22 +39,11 @@
         <div class="col">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">전문가들의 지식</h5>
+              <h5 class="card-title">전국동물보호센터<a href="{{ route('petHos') }}" class="card-link"> Click</a></h5>
+
               <h6 class="card-subtitle mb-2 text-muted">Bootstrap 4.0.0 Snippet by pradeep330</h6>
               <p class="card-text">You can also try different version of Bootstrap V4 side menu. Click below link to view all Bootstrap Menu versions.</p>
-              <a href="https://bootsnipp.com/pradeep330" class="card-link">link</a>
-              <a href="http://websitedesigntamilnadu.com" class="card-link">Another link</a>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">동물병원</h5>
-              <h6 class="card-subtitle mb-2 text-muted">Bootstrap 4.0.0 Snippet by pradeep330</h6>
-              <p class="card-text">You can also try different version of Bootstrap V4 side menu. Click below link to view all Bootstrap Menu versions.</p>
-              <a href="{{ route('petHos') }}" class="card-link">link</a>
-              <a href="http://websitedesigntamilnadu.com" class="card-link">Another link</a>
+
             </div>
           </div>
         </div>

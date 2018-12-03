@@ -89,3 +89,7 @@ Route::get('social/{provider}',[
 Route::get('/home', 'HomeController@index')->name('home');
 
 
+//마이페이지
+Route::get('map',function(){
+    return view('maps');
+});
