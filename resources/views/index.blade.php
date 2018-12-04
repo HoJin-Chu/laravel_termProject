@@ -19,7 +19,7 @@
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">펫이스북<a href="{{ url('petPhoto') }}/{{'2'}}" class="card-link"> Click</a></h5>
-              <h6 class="card-subtitle mb-2 text-muted">Bootstrap 4.0.0 Snippet by pradeep330</h6>
+              <h6 class="card-subtitle mb-2 text-muted">다양한 사람들과 소통을 해보자 </h6>
               <p class="card-text">You can also try different version of Bootstrap V4 side menu. Click below link to view all Bootstrap Menu versions.</p>
             </div>
           </div>
@@ -29,7 +29,7 @@
             <div class="card-body">
 
               <h5 class="card-title">자랑하기<a href="{{ url('petShow') }}/{{'3'}}" class="card-link"> Click</a></h5>
-              <h6 class="card-subtitle mb-2 text-muted">Bootstrap 4.0.0 Snippet by pradeep330</h6>
+              <h6 class="card-subtitle mb-2 text-muted">우리집 애완동물을 자랑해보자 </h6>
               <p class="card-text">You can also try different version of Bootstrap V4 side menu. Click below link to view all Bootstrap Menu versions.</p>
             </div>
           </div>
@@ -41,7 +41,7 @@
             <div class="card-body">
               <h5 class="card-title">전국동물보호센터<a href="{{ route('petHos') }}" class="card-link"> Click</a></h5>
 
-              <h6 class="card-subtitle mb-2 text-muted">Bootstrap 4.0.0 Snippet by pradeep330</h6>
+              <h6 class="card-subtitle mb-2 text-muted">전국의 동물 보호센터를 한눈에 보자</h6>
               <p class="card-text">You can also try different version of Bootstrap V4 side menu. Click below link to view all Bootstrap Menu versions.</p>
 
             </div>

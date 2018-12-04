@@ -14,11 +14,11 @@
       </div></hr><br><br><br>
 
           <ul class="list-group">
-            <li class="list-group-item text-muted">Activity <i class="fa fa-dashboard fa-1x"></i></li>
-            <li class="list-group-item"><span class="pull-left"><strong>Shares</strong></span> 125</li>
+            <li class="list-group-item text-muted">My Activity <i class="fa fa-dashboard fa-1x"></i></li>
+            <li class="list-group-item"><span class="pull-left"><a href="{{ route('myWrited') }}"><strong>게시글</strong></a></span> 125</li>
 
-          </ul> 
-               
+          </ul>
+
         </div><!--/col-3-->
     	<div class="col-sm-9">
           <div class="tab-content">
@@ -26,7 +26,7 @@
                 <hr>
                   <form class="form" action="##" method="post" id="registrationForm">
                       <div class="form-group">
-                          
+
                       </div>
                       <div class="form-group">
                           <div class="col-xs-6">
@@ -35,7 +35,7 @@
                           </div>
                       </div>
                       <div class="form-group">
-                          
+
                           <div class="col-xs-6">
                               <label for="email"><h4>Email</h4></label>
                               <input type="email" class="form-control" name="email" id="email" placeholder="you@email.com" title="enter your email." value="{{Illuminate\Support\Facades\Auth::user()['email']}}">
@@ -47,7 +47,7 @@
                               <input type="email" class="form-control" id="location" placeholder="somewhere" title="enter a location">
                           </div>
                       </div>
-                      
+
                       <div class="form-group">
                            <div class="col-xs-12">
                                 <br>

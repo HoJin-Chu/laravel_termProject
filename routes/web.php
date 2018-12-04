@@ -26,8 +26,12 @@ Route::get('/index',function(){
 
 //마이페이지
 Route::get('myPage',function(){
-    return view('myPage');
+    return view('myPage.myPage');
 });
+
+Route::get('myWrited','MyPageController@MyBoardIndex')->name('myWrited');
+Route::get('myWrited/fetch_data', 'MyPageController@fetch_data');
+
 
 // 받은메일함
 Route::get('recvMail','RecvMailController@RecvMailBoardIndex')->name('recvMail'); // 펫지식사이트
