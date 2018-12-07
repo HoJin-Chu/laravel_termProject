@@ -7,9 +7,13 @@
     <div id="table_data">
         @include('knowPets.knowPageData')
     </div>
+    @if(Auth::check())
     <input class="btn btn-block" type="button" onclick="location.href='{{ route('petCreatePage') }}'" value="작성하기"/>
+    @else
+    <input class="btn btn-block" type="button" onclick="alert('로그인하세요')" value="작성하기"/>
+    @endif
     </section>
-    
+
 <script>
     $(document).ready(function(){
         $(document).on('click','. a',function(event){

@@ -60,7 +60,7 @@
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('로그아웃') }}
                                     </a>
-                                    <a class="dropdown-item" href="{{ url('myPage') }}">
+                                    <a class="dropdown-item" href="{{ route('myPage') }}">
                                         마이페이지
                                     </a>
 

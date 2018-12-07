@@ -54,8 +54,7 @@
             <div class="card-body">
             <div style="display:flex;justify-content:space-between">
               <h5 class="card-title">최근에 올라온 게시글</h5>
-              <a href="">+더보기</a>
-              </div>
+                  </div>
               <table class="table">
                 <thead>
                   <tr>
@@ -84,7 +83,6 @@
           <div class="card">
             <div class="card-body"><div style="display:flex;justify-content:space-between">
               <h5 class="card-title">인기있는 게시글</h5>
-              <a href="">+더보기</a>
               </div>
               <table class="table">
                 <thead>

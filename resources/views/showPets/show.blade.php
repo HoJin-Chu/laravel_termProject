@@ -37,12 +37,16 @@
                     <hr>
             </div>
             @endforeach
+            @if(Auth::check())
             <a href="{{ route('ShowCreatePage') }}" class="btn btn-lg btn-block btn-outline-secondary pull-right">
             뽐내기</a>
+            @else
+            <input type="button" class="btn btn-lg btn-block btn-outline-secondary pull-right" onclick="alert('로그인하세요')" value="뽐내기"/>
+            @endif
         </div>
         <br>
 </div>
 <div style="display:flex;justify-content:center">
-{{ $items->links() }}    
+{{ $items->links() }}
 </div>
 @endsection

@@ -8,7 +8,7 @@
             <form action="{{route('PhotoModify',['boardType'=>$msg->BoardType,
                 'id'=>$msg->id])}}" method="post" class="form" role="form">
             @csrf
-            <input type="hidden" name="BoardType" value="2"/>  
+            <input type="hidden" name="BoardType" value="2"/>
             <input class="form-control" name="title" placeholder="TITLE" type="text" value="{{$msg->title}}" readonly/>
             <textarea name="content" id="content" class="form-control" rows="9" cols="25" required="required" placeholder="Message">{{$msg->content}}</textarea>
             <button style="margin-top:30px;" class="btn btn-lg btn-primary btn-block" type="submit">

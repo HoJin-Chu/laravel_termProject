@@ -8,9 +8,13 @@
 @section('content')
 <div class="container">
        <div class="pull-right"  style="width:55%;margin-left:21%;padding:20px;">
+       @if(Auth::check())
                     <a href="{{ route('PhotoCreatePage') }}" class="btn btn-block btn-outline-secondary pull-right">
                         작성하기
                     </a>
+        @else
+        <input type="button" class="btn btn-block btn-outline-secondary pull-right" value="작성하기" onclick="alert('로그인하세요')"/>
+        @endif
                 </div>
                 @foreach($items as $item)
 	<div class="col-md-7" style="margin-left:20%;margin-bottom:30px;">
@@ -22,7 +26,6 @@
                             <div class="media">
                               <div class="media-left">
                                 <a href="#">
-                                  <img class="media-object photo-profile" src="http://0.gravatar.com/avatar/38d618563e55e6082adf4c8f8c13f3e4?s=40&d=mm&r=g" width="40" height="40" alt="...">
                                 </a>
                               </div>
                               <div class="media-body">

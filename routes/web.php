@@ -24,13 +24,14 @@ Route::get('/index',function(){
     return view('index')->with('days',$days)->with('hitsBoards',$hitsBoards);
 });
 
-//마이페이지
-Route::get('myPage',function(){
-    return view('myPage.myPage');
-});
+
+Route::get('myPage','MyPageController@index')->name('myPage');
 
 Route::get('myWrited','MyPageController@MyBoardIndex')->name('myWrited');
+
 Route::get('myWrited/fetch_data', 'MyPageController@fetch_data');
+
+Route::post('userModify','MyPageController@userUpdate')->name('userModify');
 
 
 // 받은메일함

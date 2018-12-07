@@ -27,7 +27,7 @@
                 <th colspan="4" class="text-center">CONTENT</th>
             </tr>
             <tr>
-                <td colspan="4" style="font-size:25px">{{$msg['content']}}</td>
+                <td colspan="4" style="font-size:25px">{!!$msg['content']!!}</td>
             </tr>
             <tr>
                 <td colspan="1">
