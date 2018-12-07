@@ -90,7 +90,10 @@
         <br><br>
         <span class="navbar-toggler-icon leftmenutrigger"></span>
                 <a class="navbar-brand" href="{{ url('/') }}"> PET PLACE
+    <a href="mailto:cnghwls7@gmail.com">문의하기    </a>
+
     </p>
+
     <a class="link" href="#">Contact Us</a>&nbsp
     <a class="link" href="#">Privacy Policy</a>&nbsp
     <a class="link" href="#">Terms & Conditions</a>
