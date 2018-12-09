@@ -19,7 +19,7 @@ class ShowController extends Controller
     {
         $boardType = $request->boardType;
         $items = knowBoard::where('boardType','=',$boardType)->
-        orderBy('id','desc')->paginate(5); 
+        orderBy('id','desc')->paginate(5);
         return view('showPets.show',compact('items'));
     }
 
@@ -45,27 +45,27 @@ class ShowController extends Controller
     }
 
     public function ShowViewIndex(Request $request){
-        
+        $host = Auth::user()['name'];
         $id = $request->id;
         $msg = knowBoard::find($id);
 		$msg->hits += 1;
         $items = reply::where('boardId','=',$id)->orderBy('boardId','desc')->get();
         $msg->save();
-        return view('ShowPets.showView')->with('msg', $msg)->with('items',$items);
+        return view('ShowPets.showView')->with('msg', $msg)->with('items',$items)->with('host',$host);
     }
 
     public function ShowReplyInsert(Request $request){
         $id = $request->id;
         $msg = knowBoard::find($id);
 
-        $writer = Auth::user()['name'];
+        $host = Auth::user()['name'];
         $reply = new reply;
         $reply->boardId = $id;
-        $reply->writer = $writer;
+        $reply->writer = $host;
         $reply->reContent = $request->reContent;
         $reply->save();
         $items = reply::where('boardId','=',$id)->orderBy('reNo','desc')->get();
-        return view('showPets.showView')->with('msg', $msg)->with('items',$items);
+        return view('showPets.showView')->with('msg', $msg)->with('items',$items)->with('host',$host);
     }
 
 
@@ -76,7 +76,7 @@ class ShowController extends Controller
         return view('showPets.showModify')->with('id',$id)->with('msg', $msg);
     }
 
-    // 글수정 
+    // 글수정
     public function ShowModifyInsert(Request $request){
 
         $id = $request->id;
@@ -99,7 +99,7 @@ class ShowController extends Controller
     }
     public function ShowDelete(Request $request){
         $id = $request->id;
-        
+
         $msg = KnowBoard::find($id);
         $msg->delete();
 

@@ -26,13 +26,9 @@ Route::get('/index',function(){
 
 
 Route::get('myPage','MyPageController@index')->name('myPage');
-
 Route::get('myWrited','MyPageController@MyBoardIndex')->name('myWrited');
-
 Route::get('myWrited/fetch_data', 'MyPageController@fetch_data');
-
 Route::post('userModify','MyPageController@userUpdate')->name('userModify');
-
 
 // 받은메일함
 Route::get('recvMail','RecvMailController@RecvMailBoardIndex')->name('recvMail'); // 펫지식사이트
@@ -73,7 +69,6 @@ Route::post('ShowModify/{boardType}','ShowController@ShowModifyInsert')->name('S
 Route::post('ShowDelete', 'ShowController@ShowDelete')->name('ShowDelete'); // 뽐내기글삭제
 Route::post('showViewPage','ShowController@ShowReplyInsert')->name('ShowReply');
 
-
 //병원 사이트
 Route::get('petHos','HospitalController@HosBoardIndex')->name('petHos'); // 병원
 
@@ -84,15 +79,7 @@ Auth::routes();
 Route::get('/redirect', 'SocialAuthGoogleController@redirect');
 Route::get('/callback', 'SocialAuthGoogleController@callback');
 
-// GIT
-Route::get('social/{provider}',[
-    'as' => 'social.login',
-    'uses' => 'SocialController@execute',
-]);
-
-
 Route::get('/home', 'HomeController@index')->name('home');
-
 
 //마이페이지
 Route::get('map',function(){

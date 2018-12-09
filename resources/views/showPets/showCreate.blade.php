@@ -8,13 +8,13 @@
             <legend><a href="http://www.jquery2dotnet.com"><i class="glyphicon glyphicon-globe"></i></a> CREATE</legend>
             <form action="{{route('ShowCreate')}}" method="post" class="form" role="form" enctype="multipart/form-data">
             @csrf
-            <input type="hidden" name="BoardType" value="3"/>  
-            <input class="form-control" name="title" placeholder="TITLE" type="text" />
+            <input type="hidden" name="BoardType" value="3"/>
+            <input class="form-control" name="title" placeholder="TITLE" type="text" required/>
 
 
         <div class="input-group">
             <span class="input-group-btn">
-                <span class="btn btn-default btn-file">
+                <span class="btn btn-default btn-file" required>
                     이미지업로드 : <input type="file" id="imgInp" name="imgPath">
                 </span>
             </span>

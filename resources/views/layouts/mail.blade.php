@@ -11,9 +11,7 @@
                               <a href="{{route('sendMail')}}"><i class="fa fa-inbox"></i>보낸메일함</a>
                           </li>
 
-                          <li>
-                              <a href="#"><i class=" fa fa-trash-o"></i> Trash</a>
-                          </li>
+
                       </ul>
                       <div class="inbox-body text-center">
                           <div class="btn-group">

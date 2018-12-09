@@ -1,5 +1,9 @@
 @extends('layouts.app')
 @section('content')
+<script src="https://cdn.ckeditor.com/ckeditor5/11.1.1/classic/ckeditor.js"></script>
+<script src="https://cdn.ckeditor.com/ckeditor5/[version.number]/[distribution]/ckeditor.js"></script>
+
+
 <div class="container">
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 well well-lg">
@@ -7,14 +11,24 @@
             <form action="{{route('PhotoCreate')}}" method="post">
                 @csrf
                 <input type="hidden" name="BoardType" value="2"/>
-                <input class="form-control" name="title" placeholder="TITLE" type="text" />
-
-                <textarea name="content" id="content" required></textarea>
-                        <script type="text/javascript">
-                            CKEDITOR.replace('content', {
-                                'filebrowserUploadUrl': "{{URL::to('/')}}/ckeditor/upload.php"
-                            });
-                        </script>
+                <input class="form-control" name="title" placeholder="TITLE" type="text" required/>
+                <textarea name="content" id="editor">This is some sample content.</textarea>
+		        <script>
+                    ClassicEditor
+				    .create( document.querySelector( '#editor' ),{
+                        ckfinder: {
+                    uploadUrl: 'ckeditor/uploads.php'
+                        }
+                        }
+                        )
+.then( editor => {
+    console.log( 'Editor was initialized', editor );
+    myEditor = editor;
+} )
+.catch( err => {
+    console.error( err.stack );
+} );
+		        </script>
                 <button style="margin-top:30px;" class="btn btn-lg btn-primary btn-block" type="submit">
                     Crear CREATE</button>
             </form>

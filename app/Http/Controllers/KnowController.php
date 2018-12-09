@@ -18,14 +18,14 @@ class KnowController extends Controller
         // 해당 게시글만 해당게시판에 뿌려준다
         $boardType = $request->boardType;
         $items = knowBoard::where('boardType','=',$boardType)->
-        orderBy('id','desc')->paginate(10);
+        orderBy('id','desc')->paginate(5);
         return view('knowPets.know',compact('items'));
     }
 
     function fetch_data(Request $request){
         if($request->ajax()){
             $items = knowBoard::
-            orderBy('id','desc')->paginate(10);
+            orderBy('id','desc')->paginate(5);
             return view('knowPets.knowPageData',compact('items'))->render();
         }
     }
@@ -52,28 +52,29 @@ class KnowController extends Controller
     // 작성한 글의 상세보기
     // 댓글을 그 해당 게시글의 번호에맞는 댓글을 보여주어야함
     public function KnowViewIndex(Request $request){
+        $host = Auth::user()['name'];
         $id = $request->id;
         $msg = knowBoard::find($id);
         $msg->hits += 1;
         $getter = reply::where('boardId',$id)->get();
         $items = reply::where('boardId','=',$id)->orderBy('boardId','desc')->get();
         $msg->save();
-        return view('knowPets.knowView')->with('msg', $msg)->with('items',$items)->with('getter',$getter);
+        return view('knowPets.knowView')->with('msg', $msg)->with('items',$items)->with('getter',$getter)->with('host',$host);
     }
 
     public function KnowReplyInsert(Request $request){
         $id = $request->id;
         $msg = knowBoard::find($id);
 
-        $writer = Auth::user()['name'];
+        $host = Auth::user()['name'];
         $reply = new reply;
         $reply->boardId = $id;
-        $reply->writer = $writer;
+        $reply->writer = $host;
         $reply->reContent = $request->reContent;
         $reply->save();
         $getter = reply::where('boardId',$id)->get();
         $items = reply::where('boardId','=',$id)->orderBy('reNo','desc')->get();
-        return view('knowPets.knowView')->with('msg', $msg)->with('items',$items)->with('getter',$getter);
+        return view('knowPets.knowView')->with('msg', $msg)->with('items',$items)->with('getter',$getter)->with('host',$host);
     }
 
     // 글수정페이지로 이동

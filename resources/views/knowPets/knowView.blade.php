@@ -20,7 +20,7 @@
                 <td>{{$msg['likes']}}</td>
             </tr>
             <tr>
-            
+
                 <th colspan="4"><span class="pull-right">TITLE : {{$msg['title']}}</span></th>
             </tr></tr><tr>
             <tr>
@@ -33,20 +33,22 @@
                 <td colspan="1">
                 <a href="{{ route('petKnow',['boardType'=>$msg['BoardType']]) }}" class="pull-right btn btn-success btn-block ">목록보기</a>
                 </td>
-                
+
                 <td colspan="3">
                 <div style="display:flex;">
+                @if($msg['writer'] == $host)
                 <a href="/petModifyPage?id={{$msg["id"]}}" class="btn btn-primary">수정</a>
                 <form action="/petDelete" method="post">
                 @csrf
                 <input type="hidden" name="id" value="{{ $msg['id'] }}"/>
                 <input type="submit" class="pull-right btn btn-danger" value="삭제"/>
                 </form>
+                @endif
                 </div>
                 </td>
             </tr>
         </tbody>
-    </table>    
+    </table>
 
     <div class="card-footer">
             <div class="pull-right" style="margin: 5px">
@@ -91,7 +93,7 @@
                 </td>
 			</tr>
             @endforeach
-		
+
 			</table>
     </div>
 </div>

@@ -69,13 +69,12 @@ class RegisterController extends Controller
 
 
 
-        Event::fire(new SendMail());
-
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+        Event::fire(new SendMail($user->email,$user->name));
 
 
 

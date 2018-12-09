@@ -10,7 +10,12 @@
             @csrf
             <input type="hidden" name="BoardType" value="2"/>
             <input class="form-control" name="title" placeholder="TITLE" type="text" value="{{$msg->title}}" readonly/>
-            <textarea name="content" id="content" class="form-control" rows="9" cols="25" required="required" placeholder="Message">{{$msg->content}}</textarea>
+            <textarea name="content" id="content" required>{!! $msg->content !!}</textarea>
+            <script type="text/javascript">
+              CKEDITOR.replace('content', {
+               'filebrowserUploadUrl': "{{URL::to('/')}}/ckeditor/upload.php"
+             });
+           </script>
             <button style="margin-top:30px;" class="btn btn-lg btn-primary btn-block" type="submit">
                 Crear MODIFY</button>
             </form>
@@ -18,4 +23,6 @@
                 'id'=>$msg->id])}}" class="btn btn btn-block">돌아가기</a>
         </div>
     </div>
+
+
 @endsection
